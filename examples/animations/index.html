@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    h2 {
+      text-align: center;
+      margin: 40vh 0;
+    }
+
+    .block {
+      margin: 1em 25%;
+      background: gray;
+      height: 300px;
+      width: 50%;
+    }
+
+    #block-1 {
+      background: blue;
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
+      will-change: opacity;
+    }
+    #block-1.animate {
+      opacity: 1;
+    }
+
+    #block-2 {
+      background: red;
+      transform: scaleX(0);
+      transition: transform 300ms ease-in-out;
+      will-change: transform;
+    }
+    #block-2.animate {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+
+    #block-3 {
+      background: green;
+      transform: rotateX(0deg);
+      transition: transform 1000ms ease-in-out;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+    #block-3.animate {
+      transform: rotateZ(1080deg);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2> Haz scroll para ver el efecto. </h2>
+
+   <div class="block" id="block-1"></div>
+   <div class="block" id="block-2"></div>
+   <div class="block" id="block-3"></div>
+ </div>
+
+ <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+ <script src="./app.js"></script>
+</body>
+
+</html>
